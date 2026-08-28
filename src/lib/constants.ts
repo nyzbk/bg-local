@@ -31,60 +31,103 @@ export const ACCEPT_EXT = [".jpg", ".jpeg", ".png", ".webp"] as const;
 export const IMAGENET_MEAN = [0.485, 0.456, 0.406] as const;
 export const IMAGENET_STD = [0.229, 0.224, 0.225] as const;
 
+export const HOME_FAQ = [
+  {
+    q: "Does Peel upload my photo?",
+    a: "No. Decoding, inference and PNG encoding all run in this tab. The only network request Peel makes for the tool is the one-time download of the 4.7 MB U²-NetP model from this same site — that file is the model, not your picture.",
+  },
+  {
+    q: "Why is the first peel slower?",
+    a: "The first visit fetches u2netp.onnx (~4.7 MB) and the ONNX Runtime WebAssembly engine, then stores them in Cache Storage. Later peels reuse that cache and usually start in a second or two on a laptop.",
+  },
+  {
+    q: "Can I export a transparent PNG?",
+    a: "Yes. Transparent is the default. JPEG cannot store an alpha channel, so Peel always writes PNG when you want see-through pixels.",
+  },
+  {
+    q: "What about a white studio backdrop?",
+    a: "Switch to Solid, keep #FFFFFF, then download. Marketplace listings that reject transparent files want this path, not a checkerboard screenshot.",
+  },
+  {
+    q: "Does it work on iPhone Safari?",
+    a: "Yes. iOS is a first-class path. Camera-roll HEIC is the common miss: Safari sometimes hands the tool a HEIC blob Peel cannot decode. Convert to JPG first, then drop the JPG here.",
+  },
+  {
+    q: "Is there a watermark or daily quota?",
+    a: "No watermark, no account, no credit counter. The only ceiling is device memory. Very large phone panoramas can fail; resize and retry.",
+  },
+] as const;
+
 export const FAQ = [
   {
     q: "Is Peel really private?",
-    a: "Yes. Your photo is processed in this browser tab. It is not uploaded to Peel or to a third-party API.",
+    a: "Yes. Your photo is decoded with the browser Canvas APIs, sent to a Web Worker as raw pixels, and never posted to Peel, remove.bg, Photoroom, Clipdrop or any other host. If you open the Network panel during a peel you will not see a multipart upload of the image.",
   },
   {
     q: "Do I need an account?",
-    a: "No. There is no signup, no email wall, and no watermark on the cutout.",
+    a: "No. There is no signup, no email wall, and no watermark on the cutout. Close the tab and the pixels are gone from memory.",
   },
   {
     q: "Why is the first run slow?",
-    a: "Peel downloads a ~4.7 MB on-device model once, then caches it. Later peels are faster.",
+    a: "Peel downloads a ~4.7 MB on-device model (U²-NetP, Apache-2.0) once, plus the onnxruntime-web WASM glue, then caches both. The delay is a file download, not a queue on a GPU farm. Later visits skip that step.",
   },
   {
     q: "Does it work on iPhone?",
-    a: "Yes. iOS Safari is a critical path. HEIC from Camera Roll should be converted first in HEIC Local if the browser doesn’t already convert it.",
+    a: "Yes. iOS Safari is a critical path. Images larger than 2048 px on the long edge are downscaled before inference so WebKit does not run out of canvas memory. HEIC from Camera Roll should be converted first if the browser does not already turn it into JPEG.",
   },
   {
     q: "PNG or JPG?",
-    a: "Transparent cutouts need PNG. JPEG cannot store alpha.",
+    a: "Transparent cutouts need PNG. JPEG has no alpha channel; a “transparent JPEG” you see online is a white rectangle. Solid-fill exports are still PNG so edges stay clean.",
   },
   {
     q: "Can I put a white background behind a product?",
-    a: "Yes. Choose Solid and pick white, then download.",
+    a: "Yes. Choose Solid and pick white (#FFFFFF), then download. That is the usual Amazon / Etsy / Shopify still. You can also pick any other hex if a brand kit wants a colour plate.",
   },
   {
     q: "Is there a watermark or credit limit?",
-    a: "No watermark. No artificial quota.",
+    a: "No watermark. No artificial quota. If a peel fails it is almost always a HEIC blob, an empty drop, or a file so large the phone GPU gave up — not a paywall.",
   },
   {
-    q: "Will hair / glass look perfect?",
-    a: "Not always. Peel is a fast private utility, not a desktop studio. Refine sliders help; hard cases need a dedicated editor.",
+    q: "Will hair, glass or a bike wheel look perfect?",
+    a: "Not always. U²-NetP is a 320×320 saliency net, then we upsample and feather. Fine hair, smoke, chain-link, wine glasses and low-contrast white-on-white stills are the hard cases. The threshold and feather sliders recover some edges; a desktop editor still wins on hero shots.",
   },
   {
     q: "Do you use remove.bg?",
-    a: "No. Nothing is sent there.",
+    a: "No. Nothing is sent there. Peel is not a wrapper around a cloud API. The model file is self-hosted at /models/u2netp.onnx on this origin.",
   },
   {
     q: "Why did my photo fail?",
-    a: "Very large files can exhaust mobile memory. Try a smaller image.",
+    a: "Typical causes: HEIC/HEIF from iPhone Camera Roll, an empty file, a GIF or SVG, or a panorama well above 15 MB. Convert HEIC to JPG, keep still photos under that size, and try again. Animated GIFs and video are out of scope.",
+  },
+  {
+    q: "Can Peel remove a watermark or a logo?",
+    a: "No. Peel only estimates a subject-versus-background mask. It does not inpaint, clone-stamp or strip rights-management marks. Using it that way is outside the terms and against AdSense policy for this site.",
+  },
+  {
+    q: "What model is this, and is it legal to run in a browser?",
+    a: "The weights are U²-NetP (the portable 4.7 MB variant of U²-Net), Apache-2.0. Inference uses onnxruntime-web. We do not ship AGPL background-removal packages and we do not use BRIA RMBG weights, which are non-commercial without a paid licence.",
+  },
+  {
+    q: "Does advertising see my photo?",
+    a: "No. Google AdSense, when the site is approved and ads go live, measures page views — not the pixels inside the canvas. The photo never leaves the tab for ad targeting.",
+  },
+  {
+    q: "Can I peel a batch of 200 SKUs?",
+    a: "Not in this version. Peel is one photo at a time on purpose: a batch uploader would look like a cloud job and invite people to dump a whole catalogue into a browser tab until it crashes. For a private batch pipeline, talk to Ultimatum.",
   },
 ] as const;
 
 export const HOW_IT_WORKS = [
   {
     title: "Drop a photo",
-    body: "JPG, PNG or WebP. It stays in this tab.",
+    body: "JPG, PNG or WebP. It stays in this tab. HEIC from Camera Roll needs a convert-first step.",
   },
   {
     title: "Peel",
-    body: "An on-device model isolates the subject. First time, we load 4.7 MB.",
+    body: "U²-NetP isolates the subject at 320 px, then we upsample the mask. First visit loads 4.7 MB.",
   },
   {
     title: "Download",
-    body: "Transparent PNG, or a solid backdrop. Nothing was uploaded.",
+    body: "Transparent PNG, or a solid backdrop. Nothing was uploaded. Check the checkerboard before you ship it.",
   },
 ] as const;

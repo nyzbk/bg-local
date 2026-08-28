@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SITEMAP_PATHS } from "@/lib/seo";
 
-const PATHS = ["/", "/transparent-png", "/white-background", "/privacy", "/terms", "/about"];
+const LASTMOD = "2026-08-28";
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
@@ -9,7 +10,10 @@ export const Route = createFileRoute("/sitemap.xml")({
         const origin = new URL(request.url).origin;
         const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${PATHS.map((path) => `  <url><loc>${origin}${path}</loc><changefreq>weekly</changefreq></url>`).join("\n")}
+${SITEMAP_PATHS.map(
+  (path) =>
+    `  <url><loc>${origin}${path === "/" ? "/" : path}</loc><lastmod>${LASTMOD}</lastmod><changefreq>weekly</changefreq></url>`,
+).join("\n")}
 </urlset>
 `;
         return new Response(body, {
