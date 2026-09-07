@@ -55,7 +55,9 @@ function WhitePage() {
         </p>
         <p>
           Catalogue-specific notes are on <Link to="/product-photos">product photos</Link>. Portraits on a white plate
-          are a different crop and lighting problem; see <Link to="/portraits">portraits</Link>.
+          are a different crop and lighting problem; see <Link to="/portraits">portraits</Link>. What a listing form
+          does after upload — recode, reject alpha, JPEG on their CDN — is{" "}
+          <Link to="/marketplace">marketplace</Link>, not this control.
         </p>
       </Prose>
       <AdUnit slot="mid" className="mt-10" />

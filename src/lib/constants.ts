@@ -31,7 +31,9 @@ export const ACCEPT_EXT = [".jpg", ".jpeg", ".png", ".webp"] as const;
 export const IMAGENET_MEAN = [0.485, 0.456, 0.406] as const;
 export const IMAGENET_STD = [0.229, 0.224, 0.225] as const;
 
-export const HOME_FAQ = [
+export type FaqItem = { q: string; a: string };
+
+export const HOME_FAQ: readonly FaqItem[] = [
   {
     q: "Does Peel upload my photo?",
     a: "No. Decoding, inference and PNG encoding all run in this tab. The only network request Peel makes for the tool is the one-time download of the 4.7 MB U²-NetP model from this same site — that file is the model, not your picture.",
@@ -56,9 +58,9 @@ export const HOME_FAQ = [
     q: "Is there a watermark or daily quota?",
     a: "No watermark, no account, no credit counter. The only ceiling is device memory. Very large phone panoramas can fail; resize and retry.",
   },
-] as const;
+];
 
-export const FAQ = [
+export const FAQ: readonly FaqItem[] = [
   {
     q: "Is Peel really private?",
     a: "Yes. Your photo is decoded with the browser Canvas APIs, sent to a Web Worker as raw pixels, and never posted to Peel, remove.bg, Photoroom, Clipdrop or any other host. If you open the Network panel during a peel you will not see a multipart upload of the image.",
@@ -115,7 +117,81 @@ export const FAQ = [
     q: "Can I peel a batch of 200 SKUs?",
     a: "Not in this version. Peel is one photo at a time on purpose: a batch uploader would look like a cloud job and invite people to dump a whole catalogue into a browser tab until it crashes. For a private batch pipeline, talk to Ultimatum.",
   },
-] as const;
+  {
+    q: "Where should I save the PNG on iPhone?",
+    a: "Save to Files. Photos is a camera roll and often flattens alpha to JPEG or HEIC. Recents is a mixed view, not an archive. Details: /iphone.",
+  },
+  {
+    q: "Why did WhatsApp ruin the transparent background?",
+    a: "A photo-send is their JPEG. JPEG has no alpha, so the chat picks a plate. Attach the PNG as a document if you need the holes, or export Solid white first. Details: /whatsapp.",
+  },
+  {
+    q: "Will Amazon or Etsy accept a transparent PNG?",
+    a: "Often no. Listing photo wells recode or reject alpha. Export a solid white plate for those forms. Your own theme that composites colour may still want alpha — that is a different file. Details: /marketplace.",
+  },
+  {
+    q: "Is the checkerboard in the downloaded file?",
+    a: "No. The board is CSS in the preview. If you see it in the file, you screenshotted the tab. Download the PNG from the button, then open it in Files or Preview.",
+  },
+];
+
+export const iphoneFaq: readonly FaqItem[] = [
+  {
+    q: "Safari never showed a Downloads list.",
+    a: "iOS Safari often ignores the download attribute. Use Share → Save to Files, then open the Files app and look for peel-cutout.png.",
+  },
+  {
+    q: "Photos still shows a white box around the subject.",
+    a: "Save Image put a recode on the camera roll. JPEG and many HEIC paths have no alpha. The PNG with holes lives in Files.",
+  },
+  {
+    q: "Can I keep the master only in iCloud Photos?",
+    a: "Optimise iPhone Storage can replace a PNG with a smaller derivative. Keep the master in Files even if you also drop a preview on the roll.",
+  },
+  {
+    q: "Is this a HEIC converter?",
+    a: "No. Convert Camera Roll HEIC to JPEG before you peel. That input issue is on /how-to and /limits, not this page.",
+  },
+];
+
+export const whatsappFaq: readonly FaqItem[] = [
+  {
+    q: "Should I send the cutout as a photo?",
+    a: "Only if you already exported a solid plate and the other person just needs a look. If they need alpha, attach a document.",
+  },
+  {
+    q: "Does the HD photo toggle keep transparency?",
+    a: "No. HD is still their JPEG. JPEG has no alpha channel.",
+  },
+  {
+    q: "Status or View once as a backup?",
+    a: "Those are previews, not archives. Keep the PNG in Files.",
+  },
+  {
+    q: "Can Peel turn off WhatsApp compression?",
+    a: "No. We do not sit inside the chat and we do not guess their encoder.",
+  },
+];
+
+export const marketplaceFaq: readonly FaqItem[] = [
+  {
+    q: "Is this the same as /product-photos?",
+    a: "No. Product photos is how to shoot one SKU. This page is what the listing form does to the file after upload.",
+  },
+  {
+    q: "Is this the same as /white-background?",
+    a: "No. White background is Peel’s Solid control in this tab. Marketplace is their ingest and CDN recode.",
+  },
+  {
+    q: "The public card looks dirtier than Peel.",
+    a: "Open the public CDN URL. If it is JPEG, the form recoded you. Re-export Solid, less feather, larger long edge, try once.",
+  },
+  {
+    q: "Will Peel certify my listing?",
+    a: "No. Rules move. We do not scrape shop help into this site. Test the public card.",
+  },
+];
+
 
 export const HOW_IT_WORKS = [
   {

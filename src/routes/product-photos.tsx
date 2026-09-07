@@ -59,7 +59,8 @@ function ProductPhotosPage() {
         </p>
         <p>
           Walk the controls on the <Link to="/how-to">how-to</Link>. If hair-like fringes on fabric keep failing, read{" "}
-          <Link to="/limits">limits</Link> before you recrop the same JPEG twenty times.
+          <Link to="/limits">limits</Link> before you recrop the same JPEG twenty times. What a listing form does to
+          the file after upload is a different page — <Link to="/marketplace">marketplace</Link> — not this one.
         </p>
       </Prose>
       <AdUnit slot="mid" className="mt-10" />

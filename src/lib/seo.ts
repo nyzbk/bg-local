@@ -1,6 +1,4 @@
-export const SITE_ORIGIN =
-  (typeof import.meta !== "undefined" && import.meta.env?.VITE_SITE_URL) ||
-  "https://bg-local.vercel.app";
+export const SITE_ORIGIN = "https://bg-local.vercel.app";
 
 export const CONTACT_EMAIL = "ultaultimatum@gmail.com";
 
@@ -28,6 +26,9 @@ export const SITEMAP_PATHS = [
   "/product-photos",
   "/portraits",
   "/limits",
+  "/iphone",
+  "/whatsapp",
+  "/marketplace",
   "/faq",
   "/about",
   "/contact",

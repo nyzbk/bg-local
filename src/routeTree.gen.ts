@@ -14,13 +14,16 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as HowToRouteImport } from './routes/how-to'
+import { Route as IphoneRouteImport } from './routes/iphone'
 import { Route as LimitsRouteImport } from './routes/limits'
+import { Route as MarketplaceRouteImport } from './routes/marketplace'
 import { Route as PortraitsRouteImport } from './routes/portraits'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProductPhotosRouteImport } from './routes/product-photos'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as WhatsappRouteImport } from './routes/whatsapp'
 import { Route as TransparentPngRouteImport } from './routes/transparent-png'
 import { Route as WhiteBackgroundRouteImport } from './routes/white-background'
 
@@ -49,9 +52,19 @@ const HowToRoute = HowToRouteImport.update({
   path: '/how-to',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IphoneRoute = IphoneRouteImport.update({
+  id: '/iphone',
+  path: '/iphone',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LimitsRoute = LimitsRouteImport.update({
   id: '/limits',
   path: '/limits',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarketplaceRoute = MarketplaceRouteImport.update({
+  id: '/marketplace',
+  path: '/marketplace',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PortraitsRoute = PortraitsRouteImport.update({
@@ -84,6 +97,11 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WhatsappRoute = WhatsappRouteImport.update({
+  id: '/whatsapp',
+  path: '/whatsapp',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TransparentPngRoute = TransparentPngRouteImport.update({
   id: '/transparent-png',
   path: '/transparent-png',
@@ -101,13 +119,16 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/how-to': typeof HowToRoute
+  '/iphone': typeof IphoneRoute
   '/limits': typeof LimitsRoute
+  '/marketplace': typeof MarketplaceRoute
   '/portraits': typeof PortraitsRoute
   '/privacy': typeof PrivacyRoute
   '/product-photos': typeof ProductPhotosRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/whatsapp': typeof WhatsappRoute
   '/transparent-png': typeof TransparentPngRoute
   '/white-background': typeof WhiteBackgroundRoute
 }
@@ -117,13 +138,16 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/how-to': typeof HowToRoute
+  '/iphone': typeof IphoneRoute
   '/limits': typeof LimitsRoute
+  '/marketplace': typeof MarketplaceRoute
   '/portraits': typeof PortraitsRoute
   '/privacy': typeof PrivacyRoute
   '/product-photos': typeof ProductPhotosRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/whatsapp': typeof WhatsappRoute
   '/transparent-png': typeof TransparentPngRoute
   '/white-background': typeof WhiteBackgroundRoute
 }
@@ -134,13 +158,16 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/how-to': typeof HowToRoute
+  '/iphone': typeof IphoneRoute
   '/limits': typeof LimitsRoute
+  '/marketplace': typeof MarketplaceRoute
   '/portraits': typeof PortraitsRoute
   '/privacy': typeof PrivacyRoute
   '/product-photos': typeof ProductPhotosRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/whatsapp': typeof WhatsappRoute
   '/transparent-png': typeof TransparentPngRoute
   '/white-background': typeof WhiteBackgroundRoute
 }
@@ -152,13 +179,16 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/how-to'
+    | '/iphone'
     | '/limits'
+    | '/marketplace'
     | '/portraits'
     | '/privacy'
     | '/product-photos'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/terms'
+    | '/whatsapp'
     | '/transparent-png'
     | '/white-background'
   fileRoutesByTo: FileRoutesByTo
@@ -168,13 +198,16 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/how-to'
+    | '/iphone'
     | '/limits'
+    | '/marketplace'
     | '/portraits'
     | '/privacy'
     | '/product-photos'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/terms'
+    | '/whatsapp'
     | '/transparent-png'
     | '/white-background'
   id:
@@ -184,13 +217,16 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/how-to'
+    | '/iphone'
     | '/limits'
+    | '/marketplace'
     | '/portraits'
     | '/privacy'
     | '/product-photos'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/terms'
+    | '/whatsapp'
     | '/transparent-png'
     | '/white-background'
   fileRoutesById: FileRoutesById
@@ -201,13 +237,16 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
   HowToRoute: typeof HowToRoute
+  IphoneRoute: typeof IphoneRoute
   LimitsRoute: typeof LimitsRoute
+  MarketplaceRoute: typeof MarketplaceRoute
   PortraitsRoute: typeof PortraitsRoute
   PrivacyRoute: typeof PrivacyRoute
   ProductPhotosRoute: typeof ProductPhotosRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
+  WhatsappRoute: typeof WhatsappRoute
   TransparentPngRoute: typeof TransparentPngRoute
   WhiteBackgroundRoute: typeof WhiteBackgroundRoute
 }
@@ -249,11 +288,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HowToRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/iphone': {
+      id: '/iphone'
+      path: '/iphone'
+      fullPath: '/iphone'
+      preLoaderRoute: typeof IphoneRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/limits': {
       id: '/limits'
       path: '/limits'
       fullPath: '/limits'
       preLoaderRoute: typeof LimitsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/marketplace': {
+      id: '/marketplace'
+      path: '/marketplace'
+      fullPath: '/marketplace'
+      preLoaderRoute: typeof MarketplaceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portraits': {
@@ -298,6 +351,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/whatsapp': {
+      id: '/whatsapp'
+      path: '/whatsapp'
+      fullPath: '/whatsapp'
+      preLoaderRoute: typeof WhatsappRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/transparent-png': {
       id: '/transparent-png'
       path: '/transparent-png'
@@ -321,13 +381,16 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
   HowToRoute: HowToRoute,
+  IphoneRoute: IphoneRoute,
   LimitsRoute: LimitsRoute,
+  MarketplaceRoute: MarketplaceRoute,
   PortraitsRoute: PortraitsRoute,
   PrivacyRoute: PrivacyRoute,
   ProductPhotosRoute: ProductPhotosRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
+  WhatsappRoute: WhatsappRoute,
   TransparentPngRoute: TransparentPngRoute,
   WhiteBackgroundRoute: WhiteBackgroundRoute,
 }

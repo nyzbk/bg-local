@@ -39,7 +39,10 @@ export function HomeCopy() {
         Step-by-step notes live on the <Link to="/how-to">how-to page</Link>. Dedicated walkthroughs cover{" "}
         <Link to="/transparent-png">transparent PNG</Link>, <Link to="/white-background">white backdrops</Link>,{" "}
         <Link to="/product-photos">catalogue stills</Link> and <Link to="/portraits">portraits</Link>. Hard cases —
-        hair, glass, HEIC, memory — are listed honestly on <Link to="/limits">limits</Link>.
+        hair, glass, HEIC, memory — are listed honestly on <Link to="/limits">limits</Link>. After you download, the
+        file still has to survive iPhone Photos, WhatsApp photo-send, and listing forms —{" "}
+        <Link to="/iphone">Files vs Photos</Link>, <Link to="/whatsapp">WhatsApp flatten</Link>,{" "}
+        <Link to="/marketplace">marketplace recode</Link>.
       </p>
 
       <h2>What Peel is, and what it is not</h2>

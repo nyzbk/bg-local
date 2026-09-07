@@ -8,9 +8,10 @@ import { CONTACT_EMAIL } from "@/lib/seo";
 
 const HEADER_LINKS = [
   { to: "/how-to", label: "How to" },
-  { to: "/product-photos", label: "Products" },
+  { to: "/iphone", label: "iPhone" },
+  { to: "/whatsapp", label: "WhatsApp" },
+  { to: "/marketplace", label: "Marketplace" },
   { to: "/faq", label: "FAQ" },
-  { to: "/contact", label: "Contact" },
 ] as const;
 
 export function SiteShell({ children }: { children: ReactNode }) {
@@ -85,6 +86,21 @@ export function SiteShell({ children }: { children: ReactNode }) {
                 <li>
                   <Link to="/limits" className="inline-flex min-h-11 items-center text-muted hover:text-ink">
                     Limits and hard cases
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/iphone" className="inline-flex min-h-11 items-center text-muted hover:text-ink">
+                    iPhone Files vs Photos
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/whatsapp" className="inline-flex min-h-11 items-center text-muted hover:text-ink">
+                    WhatsApp and alpha
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/marketplace" className="inline-flex min-h-11 items-center text-muted hover:text-ink">
+                    Marketplace listing forms
                   </Link>
                 </li>
               </ul>

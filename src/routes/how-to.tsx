@@ -99,7 +99,10 @@ function HowToPage() {
           Recrop so the subject is larger. Reshoot against a darker or simpler wall. Convert HEIC. Lower resolution if
           the tab crashed. Read <Link to="/limits">limits</Link> before you spend an hour on a wine glass. Catalogue
           and headshot specifics are on <Link to="/product-photos">product photos</Link> and{" "}
-          <Link to="/portraits">portraits</Link>.
+          <Link to="/portraits">portraits</Link>. After Download: save to Files not Photos on{" "}
+          <Link to="/iphone">iPhone</Link>, do not photo-send a transparent PNG on{" "}
+          <Link to="/whatsapp">WhatsApp</Link>, and do not feed alpha into a listing well —{" "}
+          <Link to="/marketplace">marketplace</Link>.
         </p>
         <p>
           Peel will not strip a watermark, will not inpaint a logo, and will not queue 200 SKUs. Those are different

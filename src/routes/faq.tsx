@@ -36,7 +36,7 @@ function FaqPage() {
           <Link to="/">home page</Link>.
         </p>
       </Prose>
-      <Faq title="Fourteen concrete questions" />
+      <Faq title="Eighteen concrete questions" />
       <AdUnit slot="mid" className="mt-10" />
     </SiteShell>
   );
