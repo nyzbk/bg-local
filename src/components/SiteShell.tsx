@@ -3,14 +3,14 @@ import type { ReactNode } from "react";
 import { AdUnit } from "./AdUnit";
 import { PeelMark } from "./PeelMark";
 import { SoftAgencyCta } from "./SoftAgencyCta";
-import { APP_NAME } from "@/lib/constants";
+import { APP_NAME, HUB_LABEL, HUB_URL } from "@/lib/constants";
 import { CONTACT_EMAIL } from "@/lib/seo";
 
 const HEADER_LINKS = [
   { to: "/how-to", label: "How to" },
+  { to: "/backdrop", label: "Backdrop" },
   { to: "/iphone", label: "iPhone" },
   { to: "/whatsapp", label: "WhatsApp" },
-  { to: "/marketplace", label: "Marketplace" },
   { to: "/faq", label: "FAQ" },
 ] as const;
 
@@ -71,6 +71,11 @@ export function SiteShell({ children }: { children: ReactNode }) {
                 <li>
                   <Link to="/white-background" className="inline-flex min-h-11 items-center text-muted hover:text-ink">
                     White background
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/backdrop" className="inline-flex min-h-11 items-center text-muted hover:text-ink">
+                    Photo backdrop
                   </Link>
                 </li>
                 <li>
@@ -145,6 +150,15 @@ export function SiteShell({ children }: { children: ReactNode }) {
             </div>
           </div>
           <SoftAgencyCta />
+          <p>
+            <a
+              href={HUB_URL}
+              className="inline-flex min-h-11 items-center rounded-control bg-ink px-4 text-sm font-medium text-surface hover:opacity-90"
+              rel="noopener noreferrer"
+            >
+              {HUB_LABEL}
+            </a>
+          </p>
           <p className="font-mono text-xs text-muted">Photo stays in this tab · U²-NetP · Apache-2.0 weights</p>
         </div>
       </footer>

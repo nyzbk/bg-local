@@ -51,7 +51,8 @@ function WhitePage() {
         <p>
           Brand kits sometimes want #F5F5F5, a cream, or a packed colour. Change the fill, download, done. Edges are
           still PNG. If you need a true studio sweep with a floor horizon, that is a set, not a saliency net — Peel
-          will not fake a cyclorama.
+          will not fake a cyclorama. Dropping a second photograph behind the subject is{" "}
+          <Link to="/backdrop">photo backdrop</Link>, not this hex fill.
         </p>
         <p>
           Catalogue-specific notes are on <Link to="/product-photos">product photos</Link>. Portraits on a white plate

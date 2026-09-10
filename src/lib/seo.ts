@@ -22,6 +22,7 @@ export const SITEMAP_PATHS = [
   "/",
   "/transparent-png",
   "/white-background",
+  "/backdrop",
   "/how-to",
   "/product-photos",
   "/portraits",

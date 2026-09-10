@@ -79,8 +79,9 @@ function HowToPage() {
         <p>
           The checkerboard is CSS. It is not in the file. Do not screenshot it and upload that PNG to a shop. If you
           need white, switch to Solid and keep #FFFFFF, then download. That path is documented on{" "}
-          <Link to="/white-background">white background</Link>. If you need alpha, stay on Transparent —{" "}
-          <Link to="/transparent-png">transparent PNG notes</Link>.
+          <Link to="/white-background">white background</Link>. If you need the cutout on a real photograph, use{" "}
+          <Link to="/backdrop">photo backdrop</Link> — two files, cover-crop, not a hex. If you need alpha, stay on
+          Transparent — <Link to="/transparent-png">transparent PNG notes</Link>.
         </p>
 
         <h2>5. Download, then look at the file in another app</h2>

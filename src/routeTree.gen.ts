@@ -26,6 +26,7 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as WhatsappRouteImport } from './routes/whatsapp'
 import { Route as TransparentPngRouteImport } from './routes/transparent-png'
 import { Route as WhiteBackgroundRouteImport } from './routes/white-background'
+import { Route as BackdropRouteImport } from './routes/backdrop'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -112,6 +113,11 @@ const WhiteBackgroundRoute = WhiteBackgroundRouteImport.update({
   path: '/white-background',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BackdropRoute = BackdropRouteImport.update({
+  id: '/backdrop',
+  path: '/backdrop',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -131,6 +137,7 @@ export interface FileRoutesByFullPath {
   '/whatsapp': typeof WhatsappRoute
   '/transparent-png': typeof TransparentPngRoute
   '/white-background': typeof WhiteBackgroundRoute
+  '/backdrop': typeof BackdropRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -150,6 +157,7 @@ export interface FileRoutesByTo {
   '/whatsapp': typeof WhatsappRoute
   '/transparent-png': typeof TransparentPngRoute
   '/white-background': typeof WhiteBackgroundRoute
+  '/backdrop': typeof BackdropRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -170,6 +178,7 @@ export interface FileRoutesById {
   '/whatsapp': typeof WhatsappRoute
   '/transparent-png': typeof TransparentPngRoute
   '/white-background': typeof WhiteBackgroundRoute
+  '/backdrop': typeof BackdropRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -191,6 +200,7 @@ export interface FileRouteTypes {
     | '/whatsapp'
     | '/transparent-png'
     | '/white-background'
+    | '/backdrop'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -210,6 +220,7 @@ export interface FileRouteTypes {
     | '/whatsapp'
     | '/transparent-png'
     | '/white-background'
+    | '/backdrop'
   id:
     | '__root__'
     | '/'
@@ -229,6 +240,7 @@ export interface FileRouteTypes {
     | '/whatsapp'
     | '/transparent-png'
     | '/white-background'
+    | '/backdrop'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -249,6 +261,7 @@ export interface RootRouteChildren {
   WhatsappRoute: typeof WhatsappRoute
   TransparentPngRoute: typeof TransparentPngRoute
   WhiteBackgroundRoute: typeof WhiteBackgroundRoute
+  BackdropRoute: typeof BackdropRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -372,6 +385,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WhiteBackgroundRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/backdrop': {
+      id: '/backdrop'
+      path: '/backdrop'
+      fullPath: '/backdrop'
+      preLoaderRoute: typeof BackdropRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -393,6 +413,7 @@ const rootRouteChildren: RootRouteChildren = {
   WhatsappRoute: WhatsappRoute,
   TransparentPngRoute: TransparentPngRoute,
   WhiteBackgroundRoute: WhiteBackgroundRoute,
+  BackdropRoute: BackdropRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

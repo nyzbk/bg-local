@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SITE_ORIGIN, SITEMAP_PATHS } from "@/lib/seo";
 
-const LASTMOD = "2026-09-07";
+const LASTMOD = "2026-09-10";
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {

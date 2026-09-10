@@ -7,9 +7,12 @@ type Props = {
   disabled?: boolean;
   onFile: (file: File) => void;
   hasImage: boolean;
+  title?: string;
+  hint?: string;
+  testId?: string;
 };
 
-export function DropZone({ disabled, onFile, hasImage }: Props) {
+export function DropZone({ disabled, onFile, hasImage, title, hint, testId }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [over, setOver] = useState(false);
 
@@ -20,7 +23,7 @@ export function DropZone({ disabled, onFile, hasImage }: Props) {
 
   return (
     <div
-      data-testid="dropzone"
+      data-testid={testId ?? "dropzone"}
       onDragOver={(e) => {
         e.preventDefault();
         if (!disabled) setOver(true);
@@ -38,13 +41,13 @@ export function DropZone({ disabled, onFile, hasImage }: Props) {
       )}
     >
       <ImagePlus className="size-8 text-accent" strokeWidth={1.6} aria-hidden="true" />
-      <p className="mt-3 text-sm font-medium">{hasImage ? "Replace photo" : "Drop a photo"}</p>
+      <p className="mt-3 text-sm font-medium">{title ?? (hasImage ? "Replace photo" : "Drop a photo")}</p>
       <p className="mt-1 max-w-xs text-sm leading-relaxed text-muted">
-        JPG, PNG or WebP. The pixels never leave this tab.
+        {hint ?? "JPG, PNG or WebP. The pixels never leave this tab."}
       </p>
       <button
         type="button"
-        data-testid="choose-image"
+        data-testid={testId ? `${testId}-choose` : "choose-image"}
         disabled={disabled}
         onClick={() => inputRef.current?.click()}
         className="mt-5 inline-flex min-h-11 items-center rounded-control bg-ink px-4 text-sm font-medium text-surface transition-opacity duration-150 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
@@ -53,7 +56,7 @@ export function DropZone({ disabled, onFile, hasImage }: Props) {
       </button>
       <input
         ref={inputRef}
-        data-testid="file-input"
+        data-testid={testId ? `${testId}-input` : "file-input"}
         type="file"
         accept={ACCEPT_TYPES}
         className="sr-only"

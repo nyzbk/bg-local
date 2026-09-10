@@ -8,6 +8,8 @@ export const AGENCY_NAME = "Ultimatum";
 export const AGENCY_URL =
   (typeof import.meta !== "undefined" && import.meta.env?.VITE_AGENCY_URL) ||
   "https://ultimatum.studio";
+export const HUB_URL = "https://ultimatum-hub.vercel.app/";
+export const HUB_LABEL = "Ultimatum hub";
 
 export const MODEL_URL = "/models/u2netp.onnx";
 export const MODEL_CACHE = "peel-model-v1";
@@ -48,7 +50,7 @@ export const HOME_FAQ: readonly FaqItem[] = [
   },
   {
     q: "What about a white studio backdrop?",
-    a: "Switch to Solid, keep #FFFFFF, then download. Marketplace listings that reject transparent files want this path, not a checkerboard screenshot.",
+    a: "Switch to Solid, keep #FFFFFF, then download. Marketplace listings that reject transparent files want this path, not a checkerboard screenshot. A real photograph as the plate is a different job: /backdrop.",
   },
   {
     q: "Does it work on iPhone Safari?",
@@ -83,7 +85,7 @@ export const FAQ: readonly FaqItem[] = [
   },
   {
     q: "Can I put a white background behind a product?",
-    a: "Yes. Choose Solid and pick white (#FFFFFF), then download. That is the usual Amazon / Etsy / Shopify still. You can also pick any other hex if a brand kit wants a colour plate.",
+    a: "Yes. Choose Solid and pick white (#FFFFFF), then download. That is the usual Amazon / Etsy / Shopify still. You can also pick any other hex if a brand kit wants a colour plate. A lifestyle photo behind the subject is /backdrop — that is cover-crop of a second image, not a hex fill.",
   },
   {
     q: "Is there a watermark or credit limit?",
@@ -128,6 +130,10 @@ export const FAQ: readonly FaqItem[] = [
   {
     q: "Will Amazon or Etsy accept a transparent PNG?",
     a: "Often no. Listing photo wells recode or reject alpha. Export a solid white plate for those forms. Your own theme that composites colour may still want alpha — that is a different file. Details: /marketplace.",
+  },
+  {
+    q: "Can I put the cutout on a real photo, not a hex?",
+    a: "Yes, on /backdrop. That page takes two files: the subject and a backdrop photograph. Cover-crop, still in this tab. It is not Solid #FFFFFF and it is not a second drop on the homepage.",
   },
   {
     q: "Is the checkerboard in the downloaded file?",
@@ -192,6 +198,24 @@ export const marketplaceFaq: readonly FaqItem[] = [
   },
 ];
 
+export const backdropFaq: readonly FaqItem[] = [
+  {
+    q: "Is this the same as Solid white?",
+    a: "No. Solid fills a hex behind the mask. This page cover-crops a second photograph. White listings still want /white-background.",
+  },
+  {
+    q: "Is this the same as transparent PNG?",
+    a: "No. Transparent keeps holes. A photo plate fills those holes with backdrop pixels, so a JPEG recode will not invent a white box the same way.",
+  },
+  {
+    q: "Why is the scene cropped?",
+    a: "Cover fits the backdrop to the subject canvas. Extra scene is clipped. We do not letterbox or place a tiny subject on a wide set in this version.",
+  },
+  {
+    q: "Do you upload either photo?",
+    a: "No. Both files stay in this tab. The model fetch is still the on-device U²-NetP from this origin.",
+  },
+];
 
 export const HOW_IT_WORKS = [
   {
