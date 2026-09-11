@@ -1,0 +1,40 @@
+# Peel
+
+> Remove image backgrounds in the browser. Transparent PNG or a white backdrop. No upload.
+
+The public origin is https://bg-local.vercel.app. Operated by Ultimatum. Contact ultaultimatum@gmail.com.
+
+## Tools
+
+* [Remove background](https://bg-local.vercel.app) — u2netp in this tab.
+
+## Guides
+
+* [Transparent PNG](https://bg-local.vercel.app/transparent-png) — Alpha, not a checkerboard JPEG.
+* [White background](https://bg-local.vercel.app/white-background) — Marketplace white.
+* [Backdrop](https://bg-local.vercel.app/backdrop) — Solid fill after the cut.
+* [How to](https://bg-local.vercel.app/how-to) — Drop, cut, download.
+* [Product photos](https://bg-local.vercel.app/product-photos) — Edges on bottles and boxes.
+* [Portraits](https://bg-local.vercel.app/portraits) — Hair is the hard case.
+* [Limits](https://bg-local.vercel.app/limits) — What ONNX will not invent.
+* [iPhone](https://bg-local.vercel.app/iphone) — Files vs Photos.
+* [WhatsApp](https://bg-local.vercel.app/whatsapp) — PNG vs JPEG recode.
+* [Marketplace](https://bg-local.vercel.app/marketplace) — White vs transparent.
+* [FAQ](https://bg-local.vercel.app/faq) — Privacy.
+
+## Site pages
+
+* [About](https://bg-local.vercel.app/about) — Operator and what this tool refuses to be.
+* [Contact](https://bg-local.vercel.app/contact) — ultaultimatum@gmail.com
+* [Privacy](https://bg-local.vercel.app/privacy) — Bytes stay in the tab.
+* [Terms](https://bg-local.vercel.app/terms) — Not a studio, not a host.
+* [FAQ](https://bg-local.vercel.app/faq) — Short answers.
+
+## Site
+
+* [Sitemap](https://bg-local.vercel.app/sitemap.xml)
+* [llms.txt](https://bg-local.vercel.app/llms.txt) — This file.
+
+## Not on this origin
+
+* Bytes stay in the tab. There is no conversion API and no `/blogs/` cluster.

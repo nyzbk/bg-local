@@ -17,6 +17,7 @@ export function JsonLd() {
         url: SITE_ORIGIN,
         applicationCategory: "UtilitiesApplication",
         operatingSystem: "Any",
+        isAccessibleForFree: true,
         offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         description: APP_DESCRIPTION,
         browserRequirements: "Requires JavaScript. Runs entirely in the browser.",
@@ -31,7 +32,7 @@ export function JsonLd() {
       },
       {
         "@type": "Organization",
-        name: APP_NAME,
+        name: "Ultimatum",
         url: SITE_ORIGIN,
         email: CONTACT_EMAIL,
       },

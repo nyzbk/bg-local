@@ -13,6 +13,13 @@ export function pageHead(opts: {
       { title: opts.title },
       { name: "description", content: opts.description },
       { name: "robots", content: "index,follow" },
+      { property: "og:title", content: opts.title },
+      { property: "og:description", content: opts.description },
+      { property: "og:url", content: url },
+      { property: "og:type", content: "website" },
+      { property: "og:image", content: `${SITE_ORIGIN}/og.jpg` },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: `${SITE_ORIGIN}/og.jpg` },
     ],
     links: [{ rel: "canonical", href: url }],
   };
@@ -35,4 +42,5 @@ export const SITEMAP_PATHS = [
   "/contact",
   "/privacy",
   "/terms",
+  "/llms.txt",
 ] as const;
