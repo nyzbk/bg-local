@@ -14,6 +14,8 @@ export const Route = createFileRoute("/marketplace")({
       description:
         "Amazon, Etsy, Shopify and similar listing uploads often flatten PNG alpha or refuse it. This page is the form, not how to shoot the SKU and not Peel’s white-fill control.",
       path: "/marketplace",
+      appName: "Marketplace listing forms",
+      faqs: marketplaceFaq,
     }),
   component: MarketplacePage,
 });

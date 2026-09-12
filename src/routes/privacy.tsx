@@ -11,6 +11,7 @@ export const Route = createFileRoute("/privacy")({
       description:
         "Peel processes photos in your browser. We do not upload, store or transmit the pixels. AdSense, if approved, measures page views only.",
       path: "/privacy",
+      appName: "Privacy",
     }),
   component: PrivacyPage,
 });

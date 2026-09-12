@@ -2,9 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { AdUnit } from "@/components/AdUnit";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { Faq } from "@/components/Faq";
-import { JsonLd } from "@/components/JsonLd";
 import { Prose } from "@/components/Prose";
 import { SiteShell } from "@/components/SiteShell";
+import { FAQ } from "@/lib/constants";
 import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/faq")({
@@ -14,6 +14,8 @@ export const Route = createFileRoute("/faq")({
       description:
         "Does Peel upload photos? Why the first run is slow? HEIC, iPhone, watermarks, U²-NetP licence, white vs transparent PNG.",
       path: "/faq",
+      appName: "FAQ",
+      faqs: FAQ,
     }),
   component: FaqPage,
 });
@@ -21,7 +23,6 @@ export const Route = createFileRoute("/faq")({
 function FaqPage() {
   return (
     <SiteShell>
-      <JsonLd />
       <BreadcrumbJsonLd
         items={[
           { name: "Peel", path: "/" },

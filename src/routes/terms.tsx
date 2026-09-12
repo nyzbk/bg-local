@@ -11,6 +11,7 @@ export const Route = createFileRoute("/terms")({
       description:
         "Peel is provided as-is. No watermark removal, no warranty on hair or glass, you are responsible for the stills you process.",
       path: "/terms",
+      appName: "Terms",
     }),
   component: TermsPage,
 });

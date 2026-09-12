@@ -15,6 +15,9 @@ export const Route = createFileRoute("/backdrop")({
       description:
         "Composite a peeled subject onto a backdrop photograph in this tab. Cover-crop, not a hex fill. Two files, no upload.",
       path: "/backdrop",
+      appName: "Photo backdrop",
+      faqs: backdropFaq,
+      includeApp: true,
     }),
   component: BackdropPage,
 });

@@ -13,6 +13,8 @@ export const Route = createFileRoute("/white-background")({
       description:
         "Peel a still onto a solid white plate without uploading. Built for marketplace listings that reject transparent files.",
       path: "/white-background",
+      appName: "White background",
+      includeApp: true,
     }),
   component: WhitePage,
 });
@@ -26,9 +28,13 @@ function WhitePage() {
           { name: "White background", path: "/white-background" },
         ]}
       />
-      <PeelApp preset={{ bgMode: "solid", solidColor: "#FFFFFF" }} />
+      <PeelApp
+        preset={{ bgMode: "solid", solidColor: "#FFFFFF" }}
+        heading="Solid white plate for listings that reject alpha"
+        lede="Marketplace wells that refuse transparency want #FFFFFF behind the subject, not a checkerboard screenshot. Still in this tab."
+      />
       <Prose>
-        <h1 className="text-3xl font-semibold tracking-tight">White plate, still in this tab</h1>
+        <h2 className="text-3xl font-semibold tracking-tight">White plate, still in this tab</h2>
         <p>
           A lot of catalogues do not want alpha. They want a subject on #FFFFFF, evenly lit, with no living-room
           wallpaper and no drop shadow from a bedroom lamp. Peel’s solid mode composites the mask over a colour you

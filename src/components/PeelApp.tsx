@@ -22,9 +22,11 @@ import type { BackgroundMode, FeatherPx, ModelProgress as Progress, PeelPreset, 
 
 type Props = {
   preset?: PeelPreset;
+  heading?: string;
+  lede?: string;
 };
 
-export function PeelApp({ preset }: Props) {
+export function PeelApp({ preset, heading, lede }: Props) {
   const [bitmap, setBitmap] = useState<ImageBitmap | null>(null);
   const [source, setSource] = useState<ImageData | null>(null);
   const [originalUrl, setOriginalUrl] = useState<string | null>(null);
@@ -227,11 +229,11 @@ export function PeelApp({ preset }: Props) {
       <div className="max-w-2xl">
         <p className="font-mono text-xs tracking-wide text-muted uppercase">Private · on-device</p>
         <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
-          Peel the background off a photo — in this tab, nothing uploaded
+          {heading ?? "Peel the background off a photo — in this tab, nothing uploaded"}
         </h1>
         <p className="mt-3 max-w-xl text-base leading-relaxed text-muted">
-          Transparent PNG, or a solid color behind the subject. Works on people and products. Fine hair and
-          glass may need a desktop editor.
+          {lede ??
+            "Transparent PNG, or a solid color behind the subject. Works on people and products. Fine hair and glass may need a desktop editor."}
         </p>
       </div>
 

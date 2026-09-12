@@ -13,6 +13,8 @@ export const Route = createFileRoute("/transparent-png")({
       description:
         "Cut a subject onto a transparent PNG without uploading. Alpha stays in the file; JPEG cannot do this. Runs on-device with U²-NetP.",
       path: "/transparent-png",
+      appName: "Transparent PNG",
+      includeApp: true,
     }),
   component: TransparentPage,
 });
@@ -26,9 +28,13 @@ function TransparentPage() {
           { name: "Transparent PNG", path: "/transparent-png" },
         ]}
       />
-      <PeelApp preset={{ bgMode: "transparent" }} />
+      <PeelApp
+        preset={{ bgMode: "transparent" }}
+        heading="Cut a transparent PNG — alpha in the file, not a checkerboard"
+        lede="JPEG cannot store holes. Peel writes PNG with an alpha channel. The photo stays in this tab."
+      />
       <Prose>
-        <h1 className="text-3xl font-semibold tracking-tight">Transparent PNG, on this device</h1>
+        <h2 className="text-3xl font-semibold tracking-tight">Transparent PNG, on this device</h2>
         <p>
           A transparent PNG is a bitmap with an alpha channel. Where the mask is empty, those pixels are actually empty
           — not white, not a checkerboard. Design tools, slides, storefronts and most social templates composite that

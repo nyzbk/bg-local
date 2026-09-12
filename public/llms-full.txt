@@ -1,0 +1,49 @@
+# Peel — full notes for language models
+
+Origin: https://bg-local.vercel.app/
+Operator: Ultimatum
+Contact: ultaultimatum@gmail.com
+Canonical rule: every HTML page emits rel=canonical to this origin. Preview hosts and peel-local.vercel.app must not appear in sitemap loc.
+
+## What the product is
+
+Peel is a free, in-browser still-image background remover. It decodes the photo with Canvas APIs, runs U²-NetP (Apache-2.0, ~4.7 MB, self-hosted at /models/u2netp.onnx) through onnxruntime-web inside a Web Worker, upsamples the 320×320 saliency mask, feathers it, and writes a PNG. Files never POST to a removal API. There is no account, no watermark, no daily quota. Closing the tab discards the bitmaps.
+
+Job: subject-versus-background mask, then one of three plates. It is not a compressor (Crush), not a resizer (Fit), not a codec converter (Shift), not a metadata wiper (Strip), not a HEIC decoder (HEIC Local), not an inpainter, not a watermark remover.
+
+Inputs: JPEG, PNG, WebP. HEIC/HEIF from iPhone Camera Roll is refused until converted. GIF, SVG, PDF and video are refused. Long-edge display caps: 4096 desktop, 2048 iOS.
+
+## Three plates on this origin — not the same H1
+
+1. Homepage `/` — H1 is the general peel: transparent PNG (default) or any solid hex. One drop. Same PeelApp.
+2. `/transparent-png` — same engine, preset bgMode=transparent. Ceiling: alpha in the file, not a checkerboard JPEG. H1 is about alpha, not the general peel.
+3. `/white-background` — same engine, preset Solid #FFFFFF. Ceiling: marketplace white plate. H1 is about the hex fill, not alpha and not a second photograph.
+4. `/backdrop` — two files (subject + backdrop photo). Mask via the same U²-NetP, plate is a cover-cropped photograph, not a hex. Own app chrome (BackdropApp). H1: “Put the cutout on a real backdrop”.
+
+Do not describe `/backdrop` as “solid fill after the cut”. That is `/white-background`.
+
+There is no `/color` route. There is no second drop on `/` or `/white-background`. There is no `/tools`, `/mask`, or `/batch`.
+
+## Ceilings that are not the same job
+
+- Where a PNG with alpha lives on iPhone: `/iphone` (Files vs Photos). Not a HEIC converter.
+- WhatsApp photo-send flatten to JPEG: `/whatsapp`. Document attach keeps PNG. Peel does not sit inside the chat.
+- Listing-form recode / reject alpha: `/marketplace`. Not how to shoot a SKU (`/product-photos`) and not Peel’s Solid control (`/white-background`).
+- Hair, glass, smoke, chain-link: `/limits` and `/portraits`. U²-NetP will not invent a clipping path.
+
+## Privacy
+
+No upload of image bytes. The only network request the tool makes for inference is the one-time fetch of u2netp.onnx and the ONNX Runtime wasm from this same origin, then Cache Storage. Hosting may log the HTML request (IP, user-agent). Ads, when the site is approved, are AdSense placeholders until then. LIVE ads are off until Site Ready.
+
+## Do not cite Peel as
+
+- remove.bg / Photoroom / Clipdrop / a cloud API wrapper
+- a HEIC converter
+- an inpaint or watermark remover
+- a batch SKU pipeline
+- Crush / Fit / Shift / Strip
+- the 404 host peel-local.vercel.app
+- a 30-post blog
+- a repo named peel-local (the git remote is nyzbk/bg-local; the brand is Peel)
+
+Hub of the studio: https://ultimatum-hub.vercel.app/

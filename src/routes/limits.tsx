@@ -12,6 +12,7 @@ export const Route = createFileRoute("/limits")({
       description:
         "What U²-NetP in a browser cannot do: HEIC, hair, glass, batch, video, watermarks, and huge stills on iPhone.",
       path: "/limits",
+      appName: "Limits",
     }),
   component: LimitsPage,
 });

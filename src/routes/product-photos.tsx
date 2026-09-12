@@ -12,6 +12,7 @@ export const Route = createFileRoute("/product-photos")({
       description:
         "Cut catalogue stills onto white or transparent PNG without uploading. Built for single SKUs, not a 200-item farm.",
       path: "/product-photos",
+      appName: "Product photos",
     }),
   component: ProductPhotosPage,
 });

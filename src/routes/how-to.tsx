@@ -3,7 +3,7 @@ import { AdUnit } from "@/components/AdUnit";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { Prose } from "@/components/Prose";
 import { SiteShell } from "@/components/SiteShell";
-import { pageHead } from "@/lib/seo";
+import { HOME_HOW_TO_STEPS, pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/how-to")({
   head: () =>
@@ -12,6 +12,9 @@ export const Route = createFileRoute("/how-to")({
       description:
         "Step-by-step: prepare a still, drop it into Peel, wait for the 4.7 MB model on first visit, refine the mask, download a transparent or white PNG. Nothing is uploaded.",
       path: "/how-to",
+      appName: "How to",
+      howToName: "How to peel a background in this tab",
+      howToSteps: HOME_HOW_TO_STEPS,
     }),
   component: HowToPage,
 });

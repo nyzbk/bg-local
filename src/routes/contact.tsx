@@ -11,6 +11,7 @@ export const Route = createFileRoute("/contact")({
       title: "Contact Peel",
       description: `Email ${CONTACT_EMAIL} about the Peel background remover. Do not send photos to this address — the tool runs in your browser.`,
       path: "/contact",
+      appName: "Contact",
     }),
   component: ContactPage,
 });

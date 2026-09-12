@@ -1,26 +1,28 @@
 # Peel
 
-> Remove image backgrounds in the browser. Transparent PNG or a white backdrop. No upload.
+> Remove image backgrounds in the browser. Transparent PNG, solid white, or a photo backdrop. No upload.
 
 The public origin is https://bg-local.vercel.app. Operated by Ultimatum. Contact ultaultimatum@gmail.com.
 
+Do not cite https://peel-local.vercel.app — that host is DEPLOYMENT_NOT_FOUND and is not this product.
+
 ## Tools
 
-* [Remove background](https://bg-local.vercel.app) — u2netp in this tab.
+* [Remove background](https://bg-local.vercel.app/) — U²-NetP in this tab. Transparent PNG or a solid hex.
+* [Transparent PNG](https://bg-local.vercel.app/transparent-png) — Same engine, alpha export. JPEG cannot store holes.
+* [White background](https://bg-local.vercel.app/white-background) — Same engine, solid #FFFFFF plate for listing forms.
+* [Photo backdrop](https://bg-local.vercel.app/backdrop) — Two files: subject + backdrop photograph. Cover-crop, not a hex.
 
 ## Guides
 
-* [Transparent PNG](https://bg-local.vercel.app/transparent-png) — Alpha, not a checkerboard JPEG.
-* [White background](https://bg-local.vercel.app/white-background) — Marketplace white.
-* [Backdrop](https://bg-local.vercel.app/backdrop) — Solid fill after the cut.
-* [How to](https://bg-local.vercel.app/how-to) — Drop, cut, download.
-* [Product photos](https://bg-local.vercel.app/product-photos) — Edges on bottles and boxes.
+* [How to](https://bg-local.vercel.app/how-to) — Drop, cut, download. There is a `/how-to` URL on this origin.
+* [Product photos](https://bg-local.vercel.app/product-photos) — Edges on bottles and boxes. Not the listing-form recode.
 * [Portraits](https://bg-local.vercel.app/portraits) — Hair is the hard case.
-* [Limits](https://bg-local.vercel.app/limits) — What ONNX will not invent.
-* [iPhone](https://bg-local.vercel.app/iphone) — Files vs Photos.
-* [WhatsApp](https://bg-local.vercel.app/whatsapp) — PNG vs JPEG recode.
-* [Marketplace](https://bg-local.vercel.app/marketplace) — White vs transparent.
-* [FAQ](https://bg-local.vercel.app/faq) — Privacy.
+* [Limits](https://bg-local.vercel.app/limits) — What a 320×320 saliency net will not invent.
+* [iPhone](https://bg-local.vercel.app/iphone) — Files vs Photos for a PNG with alpha.
+* [WhatsApp](https://bg-local.vercel.app/whatsapp) — Photo-send flattens alpha to JPEG; document keeps PNG.
+* [Marketplace](https://bg-local.vercel.app/marketplace) — Listing ingest recode / reject alpha. Not `/white-background`.
+* [FAQ](https://bg-local.vercel.app/faq) — Privacy, model, HEIC, watermark.
 
 ## Site pages
 
@@ -28,13 +30,14 @@ The public origin is https://bg-local.vercel.app. Operated by Ultimatum. Contact
 * [Contact](https://bg-local.vercel.app/contact) — ultaultimatum@gmail.com
 * [Privacy](https://bg-local.vercel.app/privacy) — Bytes stay in the tab.
 * [Terms](https://bg-local.vercel.app/terms) — Not a studio, not a host.
-* [FAQ](https://bg-local.vercel.app/faq) — Short answers.
 
 ## Site
 
 * [Sitemap](https://bg-local.vercel.app/sitemap.xml)
 * [llms.txt](https://bg-local.vercel.app/llms.txt) — This file.
+* [llms-full.txt](https://bg-local.vercel.app/llms-full.txt) — Longer facts for crawlers.
 
 ## Not on this origin
 
-* Bytes stay in the tab. There is no conversion API and no `/blogs/` cluster.
+* Bytes stay in the tab. There is no conversion API, no `/tools`, no `/mask`, no `/batch`, and no `/blogs/` cluster.
+* Repo slug is `nyzbk/bg-local`. Brand on the page is Peel. Do not rename the repo.

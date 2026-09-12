@@ -14,6 +14,8 @@ export const Route = createFileRoute("/iphone")({
       description:
         "Safari Share into Photos often flattens alpha. Files keeps the transparent PNG Peel wrote. Recents is not an archive. This page is where the file lives after iPhone download.",
       path: "/iphone",
+      appName: "iPhone Files vs Photos",
+      faqs: iphoneFaq,
     }),
   component: IPhonePage,
 });

@@ -14,6 +14,8 @@ export const Route = createFileRoute("/whatsapp")({
       description:
         "Send the cutout as a WhatsApp document if you need the PNG. Photo-send is their JPEG. Transparent pixels become a plate you did not pick.",
       path: "/whatsapp",
+      appName: "WhatsApp and alpha",
+      faqs: whatsappFaq,
     }),
   component: WhatsAppPage,
 });

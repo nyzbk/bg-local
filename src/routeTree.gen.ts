@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as BackdropRouteImport } from './routes/backdrop'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as HowToRouteImport } from './routes/how-to'
@@ -23,10 +24,9 @@ import { Route as ProductPhotosRouteImport } from './routes/product-photos'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
-import { Route as WhatsappRouteImport } from './routes/whatsapp'
 import { Route as TransparentPngRouteImport } from './routes/transparent-png'
+import { Route as WhatsappRouteImport } from './routes/whatsapp'
 import { Route as WhiteBackgroundRouteImport } from './routes/white-background'
-import { Route as BackdropRouteImport } from './routes/backdrop'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -36,6 +36,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BackdropRoute = BackdropRouteImport.update({
+  id: '/backdrop',
+  path: '/backdrop',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -98,14 +103,14 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
-const WhatsappRoute = WhatsappRouteImport.update({
-  id: '/whatsapp',
-  path: '/whatsapp',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const TransparentPngRoute = TransparentPngRouteImport.update({
   id: '/transparent-png',
   path: '/transparent-png',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhatsappRoute = WhatsappRouteImport.update({
+  id: '/whatsapp',
+  path: '/whatsapp',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WhiteBackgroundRoute = WhiteBackgroundRouteImport.update({
@@ -113,15 +118,11 @@ const WhiteBackgroundRoute = WhiteBackgroundRouteImport.update({
   path: '/white-background',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BackdropRoute = BackdropRouteImport.update({
-  id: '/backdrop',
-  path: '/backdrop',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/backdrop': typeof BackdropRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/how-to': typeof HowToRoute
@@ -134,14 +135,14 @@ export interface FileRoutesByFullPath {
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
-  '/whatsapp': typeof WhatsappRoute
   '/transparent-png': typeof TransparentPngRoute
+  '/whatsapp': typeof WhatsappRoute
   '/white-background': typeof WhiteBackgroundRoute
-  '/backdrop': typeof BackdropRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/backdrop': typeof BackdropRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/how-to': typeof HowToRoute
@@ -154,15 +155,15 @@ export interface FileRoutesByTo {
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
-  '/whatsapp': typeof WhatsappRoute
   '/transparent-png': typeof TransparentPngRoute
+  '/whatsapp': typeof WhatsappRoute
   '/white-background': typeof WhiteBackgroundRoute
-  '/backdrop': typeof BackdropRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/backdrop': typeof BackdropRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/how-to': typeof HowToRoute
@@ -175,16 +176,16 @@ export interface FileRoutesById {
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
-  '/whatsapp': typeof WhatsappRoute
   '/transparent-png': typeof TransparentPngRoute
+  '/whatsapp': typeof WhatsappRoute
   '/white-background': typeof WhiteBackgroundRoute
-  '/backdrop': typeof BackdropRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/backdrop'
     | '/contact'
     | '/faq'
     | '/how-to'
@@ -197,14 +198,14 @@ export interface FileRouteTypes {
     | '/robots.txt'
     | '/sitemap.xml'
     | '/terms'
-    | '/whatsapp'
     | '/transparent-png'
+    | '/whatsapp'
     | '/white-background'
-    | '/backdrop'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/backdrop'
     | '/contact'
     | '/faq'
     | '/how-to'
@@ -217,14 +218,14 @@ export interface FileRouteTypes {
     | '/robots.txt'
     | '/sitemap.xml'
     | '/terms'
-    | '/whatsapp'
     | '/transparent-png'
+    | '/whatsapp'
     | '/white-background'
-    | '/backdrop'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/backdrop'
     | '/contact'
     | '/faq'
     | '/how-to'
@@ -237,15 +238,15 @@ export interface FileRouteTypes {
     | '/robots.txt'
     | '/sitemap.xml'
     | '/terms'
-    | '/whatsapp'
     | '/transparent-png'
+    | '/whatsapp'
     | '/white-background'
-    | '/backdrop'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  BackdropRoute: typeof BackdropRoute
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
   HowToRoute: typeof HowToRoute
@@ -258,10 +259,9 @@ export interface RootRouteChildren {
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
-  WhatsappRoute: typeof WhatsappRoute
   TransparentPngRoute: typeof TransparentPngRoute
+  WhatsappRoute: typeof WhatsappRoute
   WhiteBackgroundRoute: typeof WhiteBackgroundRoute
-  BackdropRoute: typeof BackdropRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -278,6 +278,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/backdrop': {
+      id: '/backdrop'
+      path: '/backdrop'
+      fullPath: '/backdrop'
+      preLoaderRoute: typeof BackdropRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -364,18 +371,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/whatsapp': {
-      id: '/whatsapp'
-      path: '/whatsapp'
-      fullPath: '/whatsapp'
-      preLoaderRoute: typeof WhatsappRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/transparent-png': {
       id: '/transparent-png'
       path: '/transparent-png'
       fullPath: '/transparent-png'
       preLoaderRoute: typeof TransparentPngRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/whatsapp': {
+      id: '/whatsapp'
+      path: '/whatsapp'
+      fullPath: '/whatsapp'
+      preLoaderRoute: typeof WhatsappRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/white-background': {
@@ -385,19 +392,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WhiteBackgroundRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/backdrop': {
-      id: '/backdrop'
-      path: '/backdrop'
-      fullPath: '/backdrop'
-      preLoaderRoute: typeof BackdropRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  BackdropRoute: BackdropRoute,
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
   HowToRoute: HowToRoute,
@@ -410,10 +411,9 @@ const rootRouteChildren: RootRouteChildren = {
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
-  WhatsappRoute: WhatsappRoute,
   TransparentPngRoute: TransparentPngRoute,
+  WhatsappRoute: WhatsappRoute,
   WhiteBackgroundRoute: WhiteBackgroundRoute,
-  BackdropRoute: BackdropRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

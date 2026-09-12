@@ -12,6 +12,7 @@ export const Route = createFileRoute("/portraits")({
       description:
         "Cut a headshot onto transparent PNG or a white plate without uploading. Hair, glasses and iPhone HEIC notes included.",
       path: "/portraits",
+      appName: "Portraits",
     }),
   component: PortraitsPage,
 });

@@ -12,6 +12,7 @@ export const Route = createFileRoute("/about")({
       description:
         "Peel is a free background remover that runs U²-NetP in your browser. No account, no upload, Apache-2.0 weights.",
       path: "/about",
+      appName: "About",
     }),
   component: AboutPage,
 });
