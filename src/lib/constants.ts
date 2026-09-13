@@ -7,7 +7,7 @@ export const ADSENSE_CLIENT = "ca-pub-7636435144500691";
 export const AGENCY_NAME = "Ultimatum";
 export const AGENCY_URL =
   (typeof import.meta !== "undefined" && import.meta.env?.VITE_AGENCY_URL) ||
-  "https://ultimatum.studio";
+  "https://ultimatum-hub.vercel.app/";
 export const HUB_URL = "https://ultimatum-hub.vercel.app/";
 export const HUB_LABEL = "Ultimatum hub";
 

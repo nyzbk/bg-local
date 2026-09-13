@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { Prose } from "@/components/Prose";
 import { SiteShell } from "@/components/SiteShell";
-import { AGENCY_NAME, AGENCY_URL } from "@/lib/constants";
+import { AGENCY_NAME, HUB_URL } from "@/lib/constants";
 import { CONTACT_EMAIL, pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/about")({
@@ -18,7 +18,6 @@ export const Route = createFileRoute("/about")({
 });
 
 function AboutPage() {
-  const url = import.meta.env.VITE_AGENCY_URL || AGENCY_URL;
   const name = import.meta.env.VITE_AGENCY_NAME || AGENCY_NAME;
 
   return (
@@ -51,12 +50,12 @@ function AboutPage() {
         <h2>Who operates it</h2>
         <p>
           Peel is a client-side utility from{" "}
-          <a href={url} rel="noopener noreferrer">
+          <a href={HUB_URL} rel="noopener noreferrer">
             {name}
           </a>
-          , which also builds brand identity, high-end sites and private web apps. For a custom pipeline, email{" "}
-          <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. The public tool stays free, watermark-free and
-          one still at a time.
+          , which also builds brand identity, high-end sites and private web apps. The public catalog of free tools is
+          the hub. For a custom pipeline, email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. The public
+          tool stays free, watermark-free and one still at a time.
         </p>
         <p>
           Questions: <Link to="/faq">FAQ</Link>. How to run it: <Link to="/how-to">how-to</Link>. Privacy of the
