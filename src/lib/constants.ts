@@ -217,6 +217,63 @@ export const backdropFaq: readonly FaqItem[] = [
   },
 ];
 
+export const portraitsFaq: readonly FaqItem[] = [
+  {
+    q: "Does Peel anonymise a face?",
+    a: "No. A cutout is not a blur, a pixelate, or a synthetic identity. The person is still obvious. Consent and likeness rights stay with you, not with this tab.",
+  },
+  {
+    q: "Why is there a hole in the glasses?",
+    a: "A bright lens flare looks like background to a saliency net. Tilt the head, kill the bounce, or accept a desktop path. Raising feather will not invent glass.",
+  },
+  {
+    q: "Camera-roll HEIC — do I peel it here?",
+    a: "Convert to JPEG first, then drop. This page is the portrait crop and lighting problem. The save-to-Files vs Photos problem after download is /iphone.",
+  },
+  {
+    q: "White plate or transparent for a headshot?",
+    a: "HR portals and directories that reject alpha want Solid white. Slides and circular avatars that already mask want transparent PNG. Two different files, same face, same tab.",
+  },
+];
+
+export const productPhotosFaq: readonly FaqItem[] = [
+  {
+    q: "Is this the same as /white-background?",
+    a: "No. This page is how to shoot one SKU so the net can see it. /white-background is Peel’s Solid #FFFFFF control. Shoot first, then open that tool.",
+  },
+  {
+    q: "Is this the same as /marketplace?",
+    a: "No. Marketplace is what their listing form and CDN do to the file after upload. This page ends at download.",
+  },
+  {
+    q: "Why does the bottle float on white?",
+    a: "The contact shadow was the table. Peel removes the table, so the shadow goes with it. Keep a sliver of surface in the crop, or add a shadow in the theme. Peel does not synthesise a floor.",
+  },
+  {
+    q: "Can I zip 200 SKUs into this tab?",
+    a: "No. One still at a time. A browser zip-farm is a crash and looks like a cloud queue — the thing this product is built not to be.",
+  },
+];
+
+export const limitsFaq: readonly FaqItem[] = [
+  {
+    q: "Will recropping ten times grow a larger model?",
+    a: "No. Inference is U²-NetP at 320×320. Recrop so the subject fills the square. You cannot download extra weights from this page.",
+  },
+  {
+    q: "Will Peel open HEIC in this tab?",
+    a: "Not as HEIC. Convert to JPEG / PNG / WebP first. That is a decoder limit, not a slider.",
+  },
+  {
+    q: "Can I strip a watermark or a logo?",
+    a: "No. Peel estimates subject versus background. It does not inpaint, clone-stamp, or remove rights-management marks. That is both product and AdSense policy.",
+  },
+  {
+    q: "Why did iPhone Safari reload mid-peel?",
+    a: "WebKit canvas plus the WASM heap ran out. Long edge is capped at 2048 px here. Shrink the JPEG and retry. A 48 MP still is the usual trigger.",
+  },
+];
+
 export const HOW_IT_WORKS = [
   {
     title: "Drop a photo",

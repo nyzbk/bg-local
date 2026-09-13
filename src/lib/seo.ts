@@ -9,7 +9,7 @@ export const SITE_ORIGIN = "https://bg-local.vercel.app";
 
 export const CONTACT_EMAIL = "ultaultimatum@gmail.com";
 
-export const CONTENT_LASTMOD = "2026-09-12";
+export const CONTENT_LASTMOD = "2026-09-13";
 
 /** 404 host. Do not emit in canonical, sitemap loc, or llms.txt. */
 export const DEAD_HOST = "https://peel-local.vercel.app";
@@ -70,6 +70,7 @@ export function jsonLdScripts(opts: JsonLdOpts) {
     url: `${SITE_ORIGIN}/`,
     description: APP_DESCRIPTION,
     inLanguage: "en",
+    image: OG_IMAGE,
     publisher,
   };
   const breadcrumb = {
@@ -94,9 +95,26 @@ export function jsonLdScripts(opts: JsonLdOpts) {
         : []),
     ],
   };
+  const webpage = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: opts.appName,
+    url,
+    description: opts.description,
+    inLanguage: "en",
+    isPartOf: { "@type": "WebSite", name: APP_NAME, url: `${SITE_ORIGIN}/` },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: OG_IMAGE,
+      width: 1200,
+      height: 630,
+    },
+    publisher,
+  };
   const scripts: { type: string; children: string }[] = [
     { type: "application/ld+json", children: JSON.stringify(website) },
     { type: "application/ld+json", children: JSON.stringify(breadcrumb) },
+    { type: "application/ld+json", children: JSON.stringify(webpage) },
   ];
   if (opts.includeApp) {
     scripts.push({

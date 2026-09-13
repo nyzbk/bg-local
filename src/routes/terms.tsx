@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { Prose } from "@/components/Prose";
 import { SiteShell } from "@/components/SiteShell";
-import { CONTACT_EMAIL, pageHead } from "@/lib/seo";
+import { CONTACT_EMAIL, SITE_ORIGIN, pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/terms")({
   head: () =>
@@ -27,8 +27,11 @@ function TermsPage() {
       />
       <Prose>
         <h1 className="text-3xl font-semibold tracking-tight">Terms of Use</h1>
-        <p className="font-mono text-xs text-muted">Last updated: 28 August 2026</p>
-        <p>The Peel tool is provided “as is” without warranty of any kind, including fitness for a particular listing, print job or likeness release.</p>
+        <p className="font-mono text-xs text-muted">Last updated: 13 September 2026</p>
+        <p>
+          The Peel tool at <span className="font-mono text-sm">{SITE_ORIGIN}</span> is provided “as is” without
+          warranty of any kind, including fitness for a particular listing, print job or likeness release.
+        </p>
         <h2>The cutout</h2>
         <ul>
           <li>
@@ -48,6 +51,7 @@ function TermsPage() {
             authentication or similar.
           </li>
           <li>Do not attempt to turn Peel into an upload API or a bulk farm by wrapping the page.</li>
+          <li>Do not click our ads, if ads are live, or ask others to click them.</li>
         </ul>
         <h2>The model</h2>
         <p>
@@ -57,7 +61,8 @@ function TermsPage() {
         <h2>Ads</h2>
         <p>
           If AdSense units are live, they are Google’s ads. Clicking your own ads is forbidden. We do not sell the
-          photographs.
+          photographs. The advertising disclosure is on the <Link to="/privacy">privacy</Link> page even while ads are
+          off.
         </p>
         <p>
           By using Peel you accept these terms. Questions: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> ·{" "}
